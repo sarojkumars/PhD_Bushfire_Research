@@ -1,0 +1,7 @@
+# Versions not pinned: record tested versions after validating on your machine.
+numpy
+pandas
+patsy
+statsmodels
+matplotlib
+pygam
