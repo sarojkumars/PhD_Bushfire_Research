@@ -29,40 +29,17 @@ The research involved the integration of satellite-derived fire-severity indices
 
 ## Model configurations and parameter selection
 
-Model development involved manual experimentation with different hyperparameter combinations to assess model behaviour and identify suitable configurations. This included testing alternative parameter values, some of which remain in the scripts as commented code.
-
-The configurations shown below represent the active model settings retained in the accompanying scripts.
-
-| Method | Model configuration |
-|---|---|
-| Random Forest (RF) | 300 trees; Gini criterion; maximum depth = 100; minimum samples split = 2; minimum samples leaf = 1; random state = 42 |
-| Gradient Boosting (GB) | 500 trees; maximum depth = 7; learning rate = 0.1; minimum samples split = 3 |
-| Support Vector Machine (SVM) | Radial basis function (RBF) kernel; C = 1000 |
-
-Parameter selection was informed by the evaluation of alternative configurations during the research. The scripts represent selected model implementations and experimental settings rather than a complete record of every parameter combination tested. Consequently, individual parameter values in these scripts may differ from those reported for the final models in the publication.
+Model development involved manual experimentation with different hyperparameter combinations to assess model behaviour and identify suitable configurations. This included testing alternative parameter values, some of which remain in the scripts as commented code. Parameter selection was informed by the evaluation of alternative configurations during the research. The scripts represent selected model implementations and experimental settings rather than a complete record of every parameter combination tested. 
 
 The thesis and associated publication provide the final methodological descriptions, model configurations and reported results.
 
 ## Software and analytical environment
 
-- **Python:** RF, GB and SVM modelling, model evaluation and results visualisation.
+- **Python:** RF, GB and SVM modelling, model evaluation.
 - **Google Earth Engine:** Landsat imagery processing and spectral fire-severity index calculations.
-- **ArcGIS Pro:** Terrain analysis, landform classification, phenological correction, spatial data processing, integration and preparation of modelling datasets.
+- **ArcGIS:** Visualisation, Terrain analysis, landform classification, phenological correction, spatial data processing, integration and preparation of modelling datasets.
 
-Python package dependencies are listed in `requirements-python.txt`.
-
-## Running the Python scripts
-
-The modelling scripts use prepared tabular datasets generated through the spatial processing workflow. The model input table contains topographic predictors and one-hot-encoded fire-severity classes.
-
-Set `TOPO_INPUT_CSV` to the prepared modelling dataset. In the provided configuration, the first 18 columns represent predictors and the following four columns represent severity classes.
-
-For visualisation, set `TOPO_VIS_CSV` to the prepared dataset containing the relevant topographic and fire-severity attributes, including `Lform`, `AspClass`, `ProfCurvCls1` and `RdNBR`.
-
-The GEE scripts document the satellite-based spectral index calculations, while additional spatial corrections and processing were performed in ArcGIS Pro.
 
 ## Research use
 
-The scripts are provided as a record of the computational methods and analytical configurations explored during the research. They complement the methodological descriptions and results presented in Chapter 5 of the thesis and the associated peer-reviewed publication.
-
-The repository is intended to support research transparency and provide examples of the analytical workflows used in the study. Some configuration may be required when applying the scripts to different datasets or computing environments.
+The scripts are provided as a record of the computational methods and analytical configurations explored during the research. They complement the methodological descriptions and results presented in Chapter 5 of the thesis and the associated peer-reviewed publication. The repository is intended to support research transparency and provide examples of the analytical workflows used in the study. 
