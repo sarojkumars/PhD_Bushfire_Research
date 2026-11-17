@@ -23,27 +23,14 @@ The numbered filenames are retained to preserve references and dependencies betw
 4. Examine model interpretation, uncertainty, spatial heterogeneity and sensitivity to spatial validation choices.
 5. Generate the supporting figures and tables for Appendix A.
 
-## Fire-severity response
+## Model configurations
 
-The binary fire-severity response was derived from RdNBR and classified into Low and High severity classes. The modelling dataset retains the field name `SNIC2clsN` for compatibility with the analytical scripts. Although the field name is historical, its values in the updated dataset are RdNBR-derived and do not represent an OBIA/SNIC classification. The associated `SNIC2clsN_0` and `SNIC2clsN_1` columns, where used, contain the encoded severity classes. The continuous `RdNBR` field is also used in supporting analyses.
+The `appendix_config.py` defines 31 predictors: 10 meteorological, 12 topographic and 9 fuel/vegetation variables, alongside seven environmental-domain combinations. The predictor list is retained as configured for the integrated modelling analyses. Individual scripts also record experiment-specific model settings. Refer to the thesis for the methods, results and interpretation.
 
-## Predictors and model configurations
 
-`appendix_config.py` defines 31 predictors: 10 meteorological, 12 topographic and 9 fuel/vegetation variables, alongside seven environmental-domain combinations. The predictor list is retained as configured for the integrated modelling analyses. Individual scripts also record experiment-specific model settings. Refer to the thesis for the methods, results and interpretation.
-
-## Software and configuration
-
-The scripts use Python and can be run in Spyder or another compatible Python environment. Dependencies are listed in `requirements.txt`. Input datasets and generated outputs are maintained separately from the public code.
-
-Set the following environment variables to match the local research folders:
-
-```python
-import os
-os.environ["APPENDIX_DATA_DIR"] = r"YOUR_INPUT_FOLDER"
-os.environ["APPENDIX_OUTPUT_DIR"] = r"YOUR_OUTPUT_FOLDER"
-os.environ["APPENDIX_DATA_FILE"] = "main_modelling_data.csv"
-os.environ["APPENDIX_SPATIAL_DATA_FILE"] = "spatial_modelling_data.csv"
-```
+## Model configurations
+The analyses were conducted using Python, with supporting statistical analyses where applicable. Required packages are listed in requirements.txt.
+Input and output directories, predictor definitions and common analysis settings are managed through appendix_config.py. Users should configure local paths and ensure the required datasets and preceding model outputs are available before running the scripts.
 
 ## Research use
 
